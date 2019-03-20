@@ -1,7 +1,6 @@
-package jdbc.fillingData.FillingTable;
+package fillingData.FillingTable;
 
 import jdbc.connection.ConnectionSingleton;
-import jdbc.fillingData.FillingTable.FillingTable;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,15 +36,14 @@ public class FillingCompany implements FillingTable {
                 connection.rollback();
                 System.err.println("Rollback is done in FillingCompany!");
             } catch (SQLException e1) {
-                e1.printStackTrace();
+                System.out.println("Error during rollback === "+ e1);
             }
         } finally {
-//            System.out.println("Start finale in FillingCompany");
             if(connection != null) {
                 try {
                     connection.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    System.out.println("Error during close connection === " + e);
                 }
             }
         }

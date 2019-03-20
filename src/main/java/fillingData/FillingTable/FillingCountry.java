@@ -1,7 +1,6 @@
-package jdbc.fillingData.FillingTable;
+package fillingData.FillingTable;
 
 import jdbc.connection.ConnectionSingleton;
-import jdbc.fillingData.FillingTable.FillingTable;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +10,7 @@ public class FillingCountry implements FillingTable {
 
 
     private static final String INSERT_NEW_COUNTRY_INTO_COUNTRY =
-            "INSERT INTO country(country, population_country) VALUES (?, ?)";
+            "INSERT INTO country(country) VALUES (?)";
 
 
     public void fill() {
@@ -24,7 +23,6 @@ public class FillingCountry implements FillingTable {
 
             for (int i = 1; i <= 100; i++) {
                 preparedStatement.setString(1, "Country " + i);
-                preparedStatement.setInt(2, (int) (1 + Math.random() * 50000));
                 preparedStatement.execute();
             }
             connection.commit();
@@ -43,12 +41,11 @@ public class FillingCountry implements FillingTable {
                 System.err.println("SQL error rollback " + e);
             }
         } finally {
-//            System.out.println("Start finale in FillingCountry");
             if (connection != null) {
                 try {
                     connection.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    System.out.println("Error during close connection === " + e);
                 }
             }
         }

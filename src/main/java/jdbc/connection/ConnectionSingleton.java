@@ -20,7 +20,7 @@ public class ConnectionSingleton {
 
     private Connection getConnectionJDBC() {
 
-        final String CONNECT_TO = "jdbc:mysql://127.0.0.1/task_02_2";
+        final String CONNECT_TO = "jdbc:mysql://127.0.0.1/task_02";
         final String LOGIN = "root";
         final String PASSWORD = "root";
 
@@ -28,7 +28,7 @@ public class ConnectionSingleton {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             connection = DriverManager.getConnection(CONNECT_TO, LOGIN, PASSWORD);
-//            connection.setAutoCommit(false);
+
         } catch (ClassNotFoundException e) {
             System.out.println("Driver not found" + e);
         } catch (SQLException e) {

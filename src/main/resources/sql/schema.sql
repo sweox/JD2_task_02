@@ -1,24 +1,19 @@
-
-
 -- create schema if not exists task_02_2 default character set utf8mb4;
 
 
 create table if not exists country
 (
-  id_country         int auto_increment not null primary key,
-  country            varchar(45)        not null,
-  population_country int                not null
-
+  id_country int auto_increment not null primary key,
+  country    varchar(45)        not null
 ) ENGINE = InnoDB
-  character set = utf8;;
+  character set = utf8;
 
 
 create table if not exists city
 (
-  id_city         int primary key not null auto_increment,
-  city            varchar(45)     not null,
-  population_city int             not null,
-  fid_country     int             not null,
+  id_city     int primary key not null auto_increment,
+  city        varchar(45)     not null,
+  fid_country int             not null,
   constraint FK_city_country
     foreign key (fid_country)
       references country (id_country)
@@ -30,9 +25,9 @@ create table if not exists city
 
 create table if not exists address
 (
-  id_address     int         not null primary key auto_increment,
-  street varchar(45) NOT NULL,
-  fid_city       int         not null,
+  id_address int         not null primary key auto_increment,
+  street     varchar(45) NOT NULL,
+  fid_city   int         not null,
   constraint FK_address_city
     foreign key (fid_city)
       references city (id_city)
@@ -56,8 +51,7 @@ create table if not exists employee
   id_employee int         not null primary key auto_increment,
   first_name  varchar(45) not null,
   last_name   varchar(45) not null,
-  email       varchar(45),
-  fid_address int,
+    fid_address int,
   constraint FK_employee_has_address
     foreign key (fid_address)
       references address (id_address)

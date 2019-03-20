@@ -1,4 +1,4 @@
-package jdbc.fillingData.FillingTable;
+package fillingData.FillingTable;
 
 
 public interface FillingTable {
