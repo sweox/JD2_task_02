@@ -4,11 +4,21 @@
 
 <hibernate-mapping>
     <class name="hibernate.xml.model.Country" table="country">
+
         <meta attribute="class-description">
             This class contain the country detail.
         </meta>
-        <id name="idCountry" type="int" column="id_country">
+
+        <id name="idCountry" column="id_country" type="int">
             <generator class="identity"/>
         </id>
+        <property name="country" column="country" type="java.lang.String" />
+
+        <list name="cities" cascade="all">
+            <key column="fid_country"/>
+            <index column="idx"/>
+            <one-to-many class="hibernate.xml.model.City"/>
+        </list>
+
     </class>
 </hibernate-mapping>

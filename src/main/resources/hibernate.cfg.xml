@@ -19,6 +19,7 @@
         <property name="current_session_context_class">thread</property>
 
         <mapping resource="Country.hbm.xml"/>
+        <mapping resource="City.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

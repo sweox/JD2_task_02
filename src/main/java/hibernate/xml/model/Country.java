@@ -1,11 +1,14 @@
 package hibernate.xml.model;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Country {
 
     private int idCountry;
     private String country;
+
+    private List<City> cities;
 
     public Country() {
     }
@@ -31,6 +34,14 @@ public class Country {
         this.country = country;
     }
 
+    public List<City> getCities() {
+        return cities;
+    }
+
+    public void setCities(List<City> cities) {
+        this.cities = cities;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -43,5 +54,14 @@ public class Country {
     @Override
     public int hashCode() {
         return Objects.hash(idCountry, country);
+    }
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "idCountry=" + idCountry +
+                ", country='" + country + '\'' +
+                ", cities=" + cities +
+                '}';
     }
 }
