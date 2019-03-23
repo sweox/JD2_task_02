@@ -1,5 +1,6 @@
 package hibernate.xml.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -40,6 +41,14 @@ public class Country {
 
     public void setCities(List<City> cities) {
         this.cities = cities;
+    }
+
+    public void addCity(City city) {
+        if(cities == null) {
+            cities = new ArrayList<>();
+        }
+        cities.add(city);
+        city.setCountry(this);
     }
 
     @Override

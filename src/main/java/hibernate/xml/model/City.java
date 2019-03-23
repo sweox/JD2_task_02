@@ -1,5 +1,7 @@
 package hibernate.xml.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class City {
@@ -7,6 +9,8 @@ public class City {
     private int idCity;
     private String city;
     private Country country;
+
+    private List<Address> addresses;
 
     public City() {
     }
@@ -41,7 +45,22 @@ public class City {
         this.country = country;
     }
 
+    public List<Address> getAddresses() {
+        return addresses;
+    }
 
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public void addAddress(Address address) {
+        if (addresses == null) {
+            addresses = new ArrayList<>();
+        }
+        addresses.add(address);
+
+        address.setCity(this);
+    }
 
     @Override
     public boolean equals(Object o) {

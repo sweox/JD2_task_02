@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="hibernate.xml.model.Address" table="address">
+
+        <meta attribute="class-description">
+            This class contain the Address detail.
+        </meta>
+
+        <id name="idAddress" column="id_address" type="int">
+            <generator class="identity"/>
+        </id>
+        <property name="street" column="street" type="java.lang.String"/>
+
+        <many-to-one name="city"
+                     column="fid_city"
+                     class="hibernate.xml.model.City"
+                     cascade="all"/>
+
+    </class>
+</hibernate-mapping>

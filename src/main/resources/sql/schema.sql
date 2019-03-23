@@ -51,7 +51,7 @@ create table if not exists employee
   id_employee int         not null primary key auto_increment,
   first_name  varchar(45) not null,
   last_name   varchar(45) not null,
-    fid_address int,
+  fid_address int,
   constraint FK_employee_has_address
     foreign key (fid_address)
       references address (id_address)

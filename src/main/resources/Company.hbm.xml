@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+
+    <class name="hibernate.xml.model.Company" table="company">
+
+        <meta attribute="class-description">
+            This class contain the Company detail.
+        </meta>
+
+        <id name="idCompany" column="id_company" type="int">
+            <generator class="identity"/>
+        </id>
+        <property name="nameCompany" column="name_company" type="java.lang.String"/>
+
+    </class>
+</hibernate-mapping>

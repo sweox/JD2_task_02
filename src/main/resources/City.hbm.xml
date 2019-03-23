@@ -3,12 +3,11 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-
-    <meta attribute="class-description">
-        This class contain the City detail.
-    </meta>
-
     <class name="hibernate.xml.model.City" table="city">
+
+        <meta attribute="class-description">
+            This class contain the City detail.
+        </meta>
 
         <id name="idCity" column="id_city " type="int">
             <generator class="identity"/>
@@ -20,6 +19,12 @@
                      column="fid_country"
                      cascade="all"
                      class="hibernate.xml.model.Country"/>
+
+        <list name="addresses" cascade="all">
+            <key column="fid_city"/>
+            <index column="idx"/>
+            <one-to-many class="hibernate.xml.model.Address"/>
+        </list>
 
     </class>
 
