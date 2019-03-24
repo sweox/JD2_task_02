@@ -15,6 +15,15 @@
             <generator class="identity"/>
         </id>
         <property name="nameCompany" column="name_company" type="java.lang.String"/>
+        <set name="addresses" table="company_address" inverse="false"
+             lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="id_company" not-null="true"/>
+            </key>
+            <many-to-many entity-name="hibernate.xml.model.Address">
+                <column name="id_address" not-null="true"/>
+            </many-to-many>
+        </set>
 
     </class>
 </hibernate-mapping>

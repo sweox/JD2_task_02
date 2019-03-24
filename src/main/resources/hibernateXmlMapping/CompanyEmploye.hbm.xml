@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--
+<hibernate-mapping>
+    <class name="hibernate.xml.model.CompanyEmployee" table="company_employee">
+        <meta attribute="class-description">
+            This class contain the company and employee details.
+        </meta>
+        <composite-id>
+            <key-many-to-one name="company" column="fid_company" entity-name="hibernate.xml.model.Company"/>
+            <key-many-to-one name="employee" column="fid_employee" entity-name="hibernate.xml.model.Employee"/>
+        </composite-id>
+        <property name="position" column="position" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>-->
+
+<hibernate-mapping>
+    <class name="hibernate.xml.model.CompanyEmployee"
+           table="company_employee">
+        <composite-id name="id" class="hibernate.xml.model.CompanyEmployeeMapping">
+            <key-many-to-one name="company" class="hibernate.xml.model.Company" column="id_company"/>
+            <key-many-to-one name="employee" class="hibernate.xml.model.Employee" column="id_employee"/>
+        </composite-id>
+        <property name="position" column="position" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

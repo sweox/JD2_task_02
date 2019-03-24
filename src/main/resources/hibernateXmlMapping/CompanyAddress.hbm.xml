@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="hibernate.xml.model.CompanyAddress" table="company_address">
+        <meta attribute="class-description">
+            This class contain the CompanyEmployee detail.
+        </meta>
+        <composite-id>
+            <key-many-to-one name="company" column="fid_company" entity-name="hibernate.xml.model.Company"/>
+            <key-many-to-one name="address" column="fid_address" entity-name="hibernate.xml.model.Address"/>
+        </composite-id>
+    </class>
+</hibernate-mapping>

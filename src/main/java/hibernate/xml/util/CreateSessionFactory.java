@@ -20,6 +20,7 @@ public class CreateSessionFactory {
 
             } catch (Throwable e) {
                 System.out.println("=== Failed to create sessionFactory object === " + e);
+
             }
 
         }

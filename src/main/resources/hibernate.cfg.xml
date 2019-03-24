@@ -18,11 +18,13 @@
 
         <property name="current_session_context_class">thread</property>
 
-        <mapping resource="Country.hbm.xml"/>
-        <mapping resource="City.hbm.xml"/>
-        <mapping resource="Address.hbm.xml"/>
-        <mapping resource="Country.hbm.xml"/>
-        <mapping resource="Employee.hbm.xml"/>
+        <mapping resource="hibernateXmlMapping/Country.hbm.xml"/>
+        <mapping resource="hibernateXmlMapping/City.hbm.xml"/>
+        <mapping resource="hibernateXmlMapping/Address.hbm.xml"/>
+        <mapping resource="hibernateXmlMapping/Company.hbm.xml"/>
+        <mapping resource="hibernateXmlMapping/Employee.hbm.xml"/>
+        <mapping resource="hibernateXmlMapping/CompanyEmploye.hbm.xml"/>
+        <!--<mapping resource="hibernateXmlMapping/CompanyAddress.hbm.xml"/>-->
 
     </session-factory>
 </hibernate-configuration>

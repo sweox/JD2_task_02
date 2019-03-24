@@ -20,5 +20,15 @@
                      class="hibernate.xml.model.City"
                      cascade="all"/>
 
+        <set name="companies" table="company_address" inverse="false"
+             lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="id_address" not-null="true"/>
+            </key>
+            <many-to-many entity-name="hibernate.xml.model.Company">
+                <column name="id_company" not-null="true"/>
+            </many-to-many>
+        </set>
+
     </class>
 </hibernate-mapping>

@@ -1,11 +1,13 @@
 package hibernate.xml.model;
 
 import java.util.Objects;
+import java.util.Set;
 
 public class Company {
 
     private int idCompany;
     private String nameCompany;
+    private Set<Address> addresses;
 
     public Company() {
     }
@@ -24,6 +26,14 @@ public class Company {
 
     public void setNameCompany(String nameCompany) {
         this.nameCompany = nameCompany;
+    }
+
+    public Set<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(Set<Address> addresses) {
+        this.addresses = addresses;
     }
 
     @Override

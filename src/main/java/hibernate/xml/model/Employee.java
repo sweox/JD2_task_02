@@ -1,6 +1,7 @@
 package hibernate.xml.model;
 
 import java.util.Objects;
+import java.util.Set;
 
 public class Employee {
 
@@ -8,6 +9,7 @@ public class Employee {
     private String firstName;
     private String lastName;
     private Address address;
+    private Set<CompanyEmployee> companyEmployees;
 
     public Employee() {
     }
@@ -42,6 +44,14 @@ public class Employee {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Set<CompanyEmployee> getCompanyEmployees() {
+        return companyEmployees;
+    }
+
+    public void setCompanyEmployees(Set<CompanyEmployee> companyEmployees) {
+        this.companyEmployees = companyEmployees;
     }
 
     @Override

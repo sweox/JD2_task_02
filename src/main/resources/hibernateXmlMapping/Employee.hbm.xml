@@ -11,5 +11,15 @@
             <generator class="identity"/>
         </id>
         <property name="firstName" column="first_name" type="java.lang.String"/>
+        <property name="lastName" column="last_name" type="java.lang.String"/>
+        <many-to-one name="address" column="fid_address" cascade="all" class="hibernate.xml.model.Address"/>
+
+        <set name="companyEmployees" table="company_employee">
+            <key>
+                <column name="id" not-null="true"/>
+            </key>
+            <one-to-many class="hibernate.xml.model.CompanyEmployee"/>
+        </set>
+
     </class>
 </hibernate-mapping>
