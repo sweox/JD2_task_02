@@ -22,7 +22,7 @@ public class RunSelect {
                     "employee.lastName, " +
                     "employeeAddress.street, " +
                     "employeeCity.city, " +
-                    "employeeCountry.country, " +
+                    "employeeCountry.country " +
                     /*"company.position " +*/
                         "from Employee as employee " +
                             "join employee.address as employeeAddress " +

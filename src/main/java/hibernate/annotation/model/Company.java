@@ -20,7 +20,7 @@ public class Company {
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private Set<CompanyEmployee> companyEmployees = new HashSet<>();
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "company_address",
             joinColumns = @JoinColumn(name = "fid_company", referencedColumnName = "id_company"),
             inverseJoinColumns = @JoinColumn(name = "fid_address", referencedColumnName = "id_address"))

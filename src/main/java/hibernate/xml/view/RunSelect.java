@@ -26,13 +26,13 @@ public class RunSelect {
                     "employee.lastName, " +
                     "employeeAddress.street, " +
                     "employeeCity.city, " +
-                    "employeeCountry.country, " +
-                    "company.position " +
+                    "employeeCountry.country " +
+                    /*"company.position " +*/
                         "from Employee as employee " +
                             "join employee.address as employeeAddress " +
                             "join employeeAddress.city as employeeCity " +
                             "join employeeCity.country as employeeCountry " +
-                            "join employee.companyEmployees as company " +
+                            /*"join employee.companyEmployees as company " +*/
                             " ";
 
 //  "join employee.companyEmployees as company where employee.idEmployee = :id"
